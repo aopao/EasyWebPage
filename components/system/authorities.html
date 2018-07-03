@@ -1,0 +1,126 @@
+<div class="layui-card">
+    <div class="layui-card-header">
+        <h2 class="header-title">权限管理</h2>
+        <span class="layui-breadcrumb pull-right">
+          <a href="#!console">首页</a>
+          <a><cite>权限管理</cite></a>
+        </span>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-form toolbar">
+            查看角色权限：
+            <select id="auth-slt-role" lay-filter="auth-slt-role" p-each="roles">
+                <option p-bind="value:{{roleId}}">{{roleName}}</option>
+            </select>&emsp;
+            <button id="auth-btn-sync" class="layui-btn icon-btn" lay-tips="自动扫描所有接口同步到数据库">
+                <i class="layui-icon">&#xe669;</i>同步
+            </button>
+        </div>
+
+        <!-- 数据表格 -->
+        <table class="layui-table" id="auth-table" lay-filter="auth-table"></table>
+    </div>
+</div>
+
+<!-- 表格状态列 -->
+<script type="text/html" id="auth-state">
+    <input type="checkbox" lay-filter="auth-state" value="{{d.authority}}" lay-skin="switch" lay-text="ON|OFF"
+           {{d.checked==1?'checked':''}}/>
+</script>
+
+<script>
+    layui.use(['form', 'table', 'util', 'config', 'admin'], function () {
+        var form = layui.form;
+        var table = layui.table;
+        var config = layui.config;
+        var layer = layui.layer;
+        var util = layui.util;
+        var admin = layui.admin;
+
+        // 渲染表格
+        table.render({
+            elem: '#auth-table',
+            url: 'authorities',
+            where: {
+                access_token: config.getToken().access_token
+            },
+            page: false,
+            cols: [[
+                {type: 'numbers'},
+                {field: 'authorityName', sort: true, title: '权限'},
+                {field: 'authority', sort: true, title: '权限标识'},
+                {
+                    field: 'createTime', sort: true, templet: function (d) {
+                        return util.toDateString(d.createTime);
+                    }, title: '创建时间'
+                },
+                {field: 'checked', sort: true, templet: '#auth-state', title: '授权'}
+            ]]
+        });
+
+        // 角色切换事件
+        form.on('select(auth-slt-role)', function (data) {
+            table.reload('auth-table', {where: {roleId: data.value}});
+        });
+
+        // 同步按钮点击事件
+        $('#auth-btn-sync').click(function () {
+            layer.confirm('确定进行同步？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                layer.load(2);
+                $.get('v2/api-docs', function (data) {
+                    admin.req('authorities/sync', {
+                        json: JSON.stringify(data)
+                    }, function (data) {
+                        layer.closeAll('loading');
+                        if (200 == data.code) {
+                            layer.msg(data.msg, {icon: 1});
+                            table.reload('auth-table');
+                        } else {
+                            layer.msg(data.msg, {icon: 2});
+                        }
+                    }, 'POST');
+                });
+            });
+        });
+
+        // 获取角色
+        //admin.showLoading('.toolbar');
+        admin.req('role', {}, function (data) {
+            //admin.removeLoading('.toolbar');
+            if (0 == data.code) {
+                data.data.unshift({roleId: '', roleName: '-请选择角色-'});
+                $('#auth-slt-role').vm({roles: data.data});
+                form.render('select');
+            } else {
+                layer.msg('获取角色失败', {icon: 2});
+            }
+        }, 'GET');
+
+        // 监听状态开关操作
+        form.on('switch(auth-state)', function (obj) {
+            var roleId = $('#auth-slt-role').val();
+            if (!roleId) {
+                layer.msg('请选择角色再进行授权操作', {icon: 2});
+                $(obj.elem).prop('checked', !obj.elem.checked);
+                form.render('checkbox');
+                return;
+            }
+            layer.load(2);
+            admin.req('authorities/role', {
+                roleId: roleId,
+                authId: obj.value
+            }, function (data) {
+                layer.closeAll('loading');
+                if (data.code == 200) {
+                    layer.msg(data.msg, {icon: 1});
+                } else {
+                    layer.msg(data.msg, {icon: 2});
+                    $(obj.elem).prop('checked', !obj.elem.checked);
+                    form.render('checkbox');
+                }
+            }, obj.elem.checked ? 'POST' : 'DELETE');
+        });
+    });
+</script>
