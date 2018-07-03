@@ -1,0 +1,117 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 5440,
+  "data": [
+    {
+      "id": "v1xxy8pj",
+      "userId": "admin",
+      "osName": "Ubuntu",
+      "device": "Ubuntu",
+      "browserType": "Chrome",
+      "ipAddress": "117.136.38.150",
+      "createTime": "2018-06-30T05:58:08.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "Zrq5Lhgp",
+      "userId": "admin",
+      "osName": "Windows 10",
+      "device": "Windows 10",
+      "browserType": "Chrome",
+      "ipAddress": "14.131.21.34",
+      "createTime": "2018-06-30T05:56:53.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "ZWM2KqcT",
+      "userId": "admin",
+      "osName": "Windows 10",
+      "device": "Windows 10",
+      "browserType": "Chrome",
+      "ipAddress": "180.173.65.248",
+      "createTime": "2018-06-30T04:11:23.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "xkNhcJ5k",
+      "userId": "admin",
+      "osName": "Windows 10",
+      "device": "Windows 10",
+      "browserType": "Internet Explorer 11",
+      "ipAddress": "113.214.210.227",
+      "createTime": "2018-06-20T11:03:02.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "la1Y8nsp",
+      "userId": "admin",
+      "osName": "Windows 7",
+      "device": "Windows 7",
+      "browserType": "Chrome",
+      "ipAddress": "58.250.57.169",
+      "createTime": "2018-06-20T10:38:45.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "t9MjPoKJ",
+      "userId": "admin",
+      "osName": "Windows 7",
+      "device": "Windows 7",
+      "browserType": "Chrome",
+      "ipAddress": "180.169.57.67",
+      "createTime": "2018-06-20T09:28:57.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "vVSoCf1r",
+      "userId": "admin",
+      "osName": "Mac OS X",
+      "device": "Mac OS X",
+      "browserType": "Chrome",
+      "ipAddress": "222.128.15.216",
+      "createTime": "2018-06-20T09:04:50.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "TWY2aPfX",
+      "userId": "admin",
+      "osName": "Mac OS X",
+      "device": "Mac OS X",
+      "browserType": "Chrome",
+      "ipAddress": "119.137.53.114",
+      "createTime": "2018-06-20T08:42:34.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "qn6JqUZX",
+      "userId": "admin",
+      "osName": "Windows 10",
+      "device": "Windows 10",
+      "browserType": "Chrome",
+      "ipAddress": "175.188.162.134",
+      "createTime": "2018-06-20T08:34:59.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    },
+    {
+      "id": "vQnlRrqM",
+      "userId": "admin",
+      "osName": "Windows 7",
+      "device": "Windows 7",
+      "browserType": "Chrome",
+      "ipAddress": "121.33.234.162",
+      "createTime": "2018-06-20T08:29:05.000+0000",
+      "nickName": "管理员",
+      "username": "admin"
+    }
+  ]
+}

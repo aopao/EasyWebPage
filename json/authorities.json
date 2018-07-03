@@ -1,0 +1,119 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 16,
+  "data": [
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "移除角色权限",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "delete:/authorities/role",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "删除角色",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "delete:/role/{id}",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "查询所有权限",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "get:/authorities",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "查询所有登录日志",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "get:/loginRecord",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "查询所有角色",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "get:/role",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "获取个人信息",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "get:/userInfo",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "给角色添加权限",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "post:/authorities/role",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "同步权限",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "post:/authorities/sync",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "添加角色",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "post:/role",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "添加用户",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "post:/user",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "查询所有用户",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "post:/user/query",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "修改角色",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "put:/role",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "修改用户",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "put:/user",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "修改自己密码",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "put:/user/psw",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "重置密码",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "put:/user/psw/{id}",
+      "checked": 0
+    },
+    {
+      "serialVersionUID": -6058060376656180793,
+      "authorityName": "修改用户状态",
+      "createTime": "2018-07-03T06:12:35.000+0000",
+      "authority": "put:/user/state",
+      "checked": 0
+    }
+  ]
+}

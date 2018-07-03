@@ -1,0 +1,73 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 2,
+  "data": [
+    {
+      "userId": "admin",
+      "username": "admin",
+      "nickName": "管理员",
+      "avatar": "",
+      "sex": "女",
+      "phone": "13125062807",
+      "email": "whvcse@foxmail.com",
+      "emailVerified": null,
+      "personId": null,
+      "state": 0,
+      "createTime": "2017-08-14T06:12:36.000+0000",
+      "updateTime": "2018-07-03T00:18:58.000+0000",
+      "authorities": null,
+      "roles": [
+        {
+          "roleId": "admin",
+          "roleName": "管理员",
+          "comments": "系统管理员1111",
+          "isDelete": 0,
+          "createTime": "2018-02-23T00:31:22.000+0000",
+          "updateTime": "2018-07-02T07:48:15.000+0000"
+        }
+      ],
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true
+    },
+    {
+      "userId": "StwQZfNd",
+      "username": "demo",
+      "nickName": "demo",
+      "avatar": null,
+      "sex": "女",
+      "phone": "13125648523",
+      "email": null,
+      "emailVerified": null,
+      "personId": null,
+      "state": 0,
+      "createTime": "2018-07-02T09:01:50.000+0000",
+      "updateTime": "2018-07-02T09:02:00.000+0000",
+      "authorities": null,
+      "roles": [
+        {
+          "roleId": "nZHiVgwJ",
+          "roleName": "nihao",
+          "comments": "nihao",
+          "isDelete": 0,
+          "createTime": "2018-07-02T02:47:16.000+0000",
+          "updateTime": "2018-07-02T02:47:15.000+0000"
+        },
+        {
+          "roleId": "user",
+          "roleName": "普通用户",
+          "comments": "系统普通用",
+          "isDelete": 0,
+          "createTime": "2018-02-23T00:32:11.000+0000",
+          "updateTime": "2018-07-01T09:32:54.000+0000"
+        }
+      ],
+      "enabled": true,
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true
+    }
+  ]
+}

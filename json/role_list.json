@@ -1,0 +1,95 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 11,
+  "data": [
+    {
+      "roleId": "admin",
+      "roleName": "管理员",
+      "comments": "系统管理员1111",
+      "isDelete": 0,
+      "createTime": "2018-02-23T00:31:22.000+0000",
+      "updateTime": "2018-07-02T07:48:15.000+0000"
+    },
+    {
+      "roleId": "user",
+      "roleName": "普通用户",
+      "comments": "系统普通用",
+      "isDelete": 0,
+      "createTime": "2018-02-23T00:32:11.000+0000",
+      "updateTime": "2018-07-01T09:32:54.000+0000"
+    },
+    {
+      "roleId": "Qk3DBXFb",
+      "roleName": "78678",
+      "comments": "67867687",
+      "isDelete": 0,
+      "createTime": "2018-06-30T06:37:48.000+0000",
+      "updateTime": "2018-06-30T06:37:48.000+0000"
+    },
+    {
+      "roleId": "PDgRdooJ",
+      "roleName": "111",
+      "comments": "11122",
+      "isDelete": 0,
+      "createTime": "2018-07-01T09:33:11.000+0000",
+      "updateTime": "2018-07-02T01:00:16.000+0000"
+    },
+    {
+      "roleId": "nZHiVgwJ",
+      "roleName": "nihao",
+      "comments": "nihao",
+      "isDelete": 0,
+      "createTime": "2018-07-02T02:47:16.000+0000",
+      "updateTime": "2018-07-02T02:47:15.000+0000"
+    },
+    {
+      "roleId": "M0gblERp",
+      "roleName": "cde",
+      "comments": "adjf",
+      "isDelete": 0,
+      "createTime": "2018-07-02T02:56:13.000+0000",
+      "updateTime": "2018-07-02T02:56:12.000+0000"
+    },
+    {
+      "roleId": "qTLprJLK",
+      "roleName": "111",
+      "comments": "aaa",
+      "isDelete": 0,
+      "createTime": "2018-07-02T05:37:21.000+0000",
+      "updateTime": "2018-07-02T05:37:21.000+0000"
+    },
+    {
+      "roleId": "UWCCcrOW",
+      "roleName": "sss",
+      "comments": "aaa",
+      "isDelete": 0,
+      "createTime": "2018-07-02T05:37:32.000+0000",
+      "updateTime": "2018-07-02T05:37:32.000+0000"
+    },
+    {
+      "roleId": "CjKcJiFc",
+      "roleName": "ddcfc",
+      "comments": "ewewew",
+      "isDelete": 0,
+      "createTime": "2018-07-02T09:16:59.000+0000",
+      "updateTime": "2018-07-02T09:16:59.000+0000"
+    },
+    {
+      "roleId": "jmstl7ho",
+      "roleName": "tt",
+      "comments": "t",
+      "isDelete": 0,
+      "createTime": "2018-07-02T15:14:28.000+0000",
+      "updateTime": "2018-07-02T15:14:27.000+0000"
+    },
+    {
+      "roleId": "jlVM697L",
+      "roleName": "nihao",
+      "comments": "dsaf",
+      "isDelete": 0,
+      "createTime": "2018-07-03T06:13:02.000+0000",
+      "updateTime": "2018-07-03T06:13:01.000+0000"
+    }
+  ]
+}

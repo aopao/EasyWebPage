@@ -1,0 +1,56 @@
+<div class="layui-card">
+    <div class="layui-card-header">
+        <h2 class="header-title">文章管理</h2>
+        <span class="layui-breadcrumb pull-right">
+          <a href="#!console">首页</a>
+          <a><cite>文章管理</cite></a>
+        </span>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-form toolbar">
+            搜索：<input id="art-edit-search" class="layui-input search-input" type="text" placeholder="输入关键字"/>&emsp;
+            <button id="art-btn-search" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+        </div>
+
+        <!-- 数据表格 -->
+        <table class="layui-table" id="art-table" lay-filter="art-table"></table>
+    </div>
+</div>
+
+<!-- 表格操作列 -->
+<script type="text/html" id="art-table-bar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<script>
+    layui.use(['table', 'util', 'config'], function () {
+        var table = layui.table;
+        var config = layui.config;
+        var util = layui.util;
+
+        //渲染表格
+        table.render({
+            elem: '#art-table',
+            url: config.base_server + 'article.json',
+            where: {
+                access_token: config.getToken().access_token
+            },
+            page: false,
+            cols: [[
+                {type: 'numbers'},
+                {field: 'id', sort: true, title: '文章ID'},
+                {field: 'label', sort: true, title: '文章标签'},
+                {field: 'title', sort: true, title: '文章标题'},
+                {field: 'author', sort: true, title: '作者'},
+                {
+                    field: 'uploadtime', sort: true, templet: function (d) {
+                        return util.toDateString(d.createTime);
+                    }, title: '发布时间'
+                },
+                {align: 'center', toolbar: '#art-table-bar', title: '操作'}
+            ]]
+        });
+    });
+
+</script>
