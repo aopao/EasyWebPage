@@ -65,10 +65,10 @@
 
                 // 回显user数据
                 var user = admin.getTempData('t_user');
-                $('#user-form').attr('method', 'POST');
+                $('#user-form').attr('method', 'GET');
                 if (user) {
                     form.val('user-form', user);
-                    $('#user-form').attr('method', 'PUT');
+                    $('#user-form').attr('method', 'GET');
                     var rds = new Array();
                     for (var i = 0; i < user.roles.length; i++) {
                         rds.push(user.roles[i].roleId);

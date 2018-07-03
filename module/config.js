@@ -58,14 +58,6 @@ layui.define(function (exports) {
                 path: 'system/login_record.html',
                 auth: 'get:/loginRecord'
             }]
-        }, {
-            name: 'CMS管理',
-            icon: 'layui-icon-note',
-            subMenus: [{
-                name: '文章管理',
-                url: 'article',
-                path: 'cms/article.html'
-            }]
         }],
         // 当前登录的用户
         getUser: function () {

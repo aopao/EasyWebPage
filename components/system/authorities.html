@@ -80,7 +80,7 @@
                         } else {
                             layer.msg(data.msg, {icon: 2});
                         }
-                    }, 'POST');
+                    }, 'GET');
                 });
             });
         });
@@ -120,7 +120,7 @@
                     $(obj.elem).prop('checked', !obj.elem.checked);
                     form.render('checkbox');
                 }
-            }, obj.elem.checked ? 'POST' : 'DELETE');
+            }, obj.elem.checked ? 'GET' : 'DELETE');
         });
     });
 </script>

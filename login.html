@@ -104,7 +104,7 @@
             $.ajax({
                 url: config.base_server + 'token.json',
                 data: field,
-                type: 'POST',
+                type: 'GET',
                 dataType: 'JSON',
                 success: function (data) {
                     console.log(JSON.stringify(data));

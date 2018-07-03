@@ -51,7 +51,7 @@
         table.render({
             elem: '#user-table',
             url: config.base_server + 'user_query.json',
-            method: 'post',
+            method: 'GET',
             where: {
                 access_token: config.getToken().access_token
             },
@@ -96,7 +96,7 @@
                         } else {
                             layer.msg(data.msg, {icon: 2});
                         }
-                    }, 'PUT');
+                    }, 'GET');
                 });
             }
         });
@@ -137,7 +137,7 @@
                     $(obj.elem).prop('checked', !obj.elem.checked);
                     form.render('checkbox');
                 }
-            }, 'PUT');
+            }, 'GET');
         });
     });
 </script>

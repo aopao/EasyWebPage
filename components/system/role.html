@@ -126,10 +126,10 @@
                 content: $('#role-model').html(),
                 success: function () {
                     $('#role-form')[0].reset();
-                    $('#role-form').attr('method', 'POST');
+                    $('#role-form').attr('method', 'GET');
                     if (data) {
                         form.val('role-form', data);
-                        $('#role-form').attr('method', 'PUT');
+                        $('#role-form').attr('method', 'GET');
                     }
                     $('#role-form .close').click(function () {
                         layer.closeAll('page');
