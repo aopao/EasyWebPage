@@ -5,8 +5,8 @@
 
 > 基于jquery、layui的管理系统模板，单页面、响应式、支持mvvm、极易上手！
 
-* 演示地址：[http://47.98.107.251:8088/login.html](http://47.98.107.251:8088/login.html)
-* 演示账号：admin &emsp;&emsp; 密码：admin 
+* 演示地址：[https://whvse.gitee.io/easywebpage/login.html](https://whvse.gitee.io/easywebpage/login.html)
+* 演示账号：随便输 &emsp;&emsp; 密码：随便输 
 
 
 ### 1.1.使用框架 

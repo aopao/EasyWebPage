@@ -40,7 +40,7 @@
         // 渲染表格
         table.render({
             elem: '#auth-table',
-            url: 'authorities',
+            url: config.base_server + 'authorities.json',
             where: {
                 access_token: config.getToken().access_token
             },
@@ -69,8 +69,8 @@
                 btn: ['确定', '取消'] //按钮
             }, function () {
                 layer.load(2);
-                $.get('v2/api-docs', function (data) {
-                    admin.req('authorities/sync', {
+                $.get(config.base_server + 'user_state.json', function (data) {
+                    admin.req('user_state.json', {
                         json: JSON.stringify(data)
                     }, function (data) {
                         layer.closeAll('loading');
@@ -87,7 +87,7 @@
 
         // 获取角色
         //admin.showLoading('.toolbar');
-        admin.req('role', {}, function (data) {
+        admin.req('role_list.json', {}, function (data) {
             //admin.removeLoading('.toolbar');
             if (0 == data.code) {
                 data.data.unshift({roleId: '', roleName: '-请选择角色-'});
@@ -108,7 +108,7 @@
                 return;
             }
             layer.load(2);
-            admin.req('authorities/role', {
+            admin.req('user_state.json', {
                 roleId: roleId,
                 authId: obj.value
             }, function (data) {
