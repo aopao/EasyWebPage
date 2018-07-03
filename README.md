@@ -50,6 +50,10 @@ mvvm框架 | [pandyle.js](https://gitee.com/pandarrr/pandyle) (专为jquery编�
 
 1. 直接下载项目，或使用git下载
 2. 使用IDEA（WebStorm）或者HBuilder等前端开发工具进行开发
+3. 运行login.html或者index.html启动
+
+    ![](https://ws1.sinaimg.cn/large/006a7GCKgy1fswshc48i2j30i80d5jt6.jpg)
+
 
 ### 2.2.添加一个业务界面
 比如你要做一个CMS系统，添加一个文章管理界面：
