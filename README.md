@@ -683,18 +683,59 @@ model-form-footer | 弹窗里面表单底部操作按钮容器的样式
 
 
 #### 3.5.4.admin.css可用于任何layui后台大布局
-&emsp;
+&emsp;&emsp;EasyWeb完全基于layui的后台大布局进行样式修改，html结构是完全基于layui的后台大布局的，所以项目里面的
+admin.css你可以用于任何layui后台大布局的页面，加入之后你的页面就得到EasyWeb的样式了，不信现在就去试试！ 但是侧导航栏
+的折叠事件、全屏等事件是写在admin.js里面的，所以建议你直接使用EasyWeb的框架，当然如果你有自己的基于layui后台
+大布局的框架，完全可以使用我的admin.css。
 
 
 ### 3.6.鼠标经过自动弹出tips层
+使用示例：
+```html
+<button class="layui-btn" lay-tips="大家好！">按钮</button>
+```
+&emsp;&emsp;只需要在你的DOM节点上面添加`lay-tips="xxx"`，然后这个节点在鼠标滑过的时候就会自动显示tips层了，简单吧！
 
+**默认提示位置在元素的上面，修改位置可以这样做：**
+```html
+<button class="layui-btn" lay-tips="大家好！" lay-direction="2">按钮</button>
+```
+再加一个`lay-direction`属性就可以了，参数如下：
+- 1 - 上面，默认，可以不写
+- 2 - 右边
+- 3 - 下面
+- 4 - 左边
+
+效果图：
+
+![](https://ws1.sinaimg.cn/large/006a7GCKgy1fsxm581mpxj309405pa9x.jpg)
 
 
 ### 3.7.路由的使用
+&emsp;&emsp;路由这里使用的是Q.js框架，如果你的左侧菜单是配置在config.menus里面的话，不需要自己注册路由监听，
+index.js里面会自动帮你注册。
+
+&emsp;&emsp;如果你需要自己添加路由注册监听的话，请参考q.js的开发文档：[Q.js](https://github.com/itorr/q.js)。
+
+**注意：**<br>
+&emsp;&emsp;EasyWeb里面使用的q.js进行过修改，我在里面加了一个刷新的方法，所以请不要擅自替换q.js文件，如果你发现
+q.js框架出来新版本了，请联系我进行替换，请多多包含，不要嫌麻烦，以免出问题。
 
 
 ### 3.8.mvvm数据绑定、组件等
+&emsp;&emsp;虽然现在vue很流行，但是jquery的许多方法仍然很好用，所以现在很多项目里面既有vue，又有jquery，
+然而对于开发一个后台管理系统来说，我们仅仅用了vue的数据渲染功能，大部分还是用的jquery的代码，这样一来项目
+就显得有点不伦不类了。
 
+&emsp;&emsp;但是对于前后端分离来说，mvvm的框架渲染数据确实很方便，很强大，layui虽然提供了模板引擎，
+但是写法太别扭了，还麻烦，还好我翻遍github、gitee，终于找到了一个牛B哄哄的框架pandyle.js，一个为
+jquery打造的mvvm框架，还提供了类似vue组件的写法。
+
+&emsp;&emsp;EasyWeb里面的头部header、side等都是使用的它的组件的写法，还有一些下拉框select的渲染也是用的它提供的mvvm的写法，
+确实比layui的模板引擎要好用多了，模板引擎这几个字真是听的牛B哄哄，用起来很一般啊。
+
+&emsp;&emsp;我这里就不提供pandyle.js的用法了，以免造跟不上pandyle作者的更新脚步，
+大家可以到这里[pandyle.js](https://gitee.com/pandarrr/pandyle)查看pandyle的开发文档。
 
 
 ## 4.项目截图
