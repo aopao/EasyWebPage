@@ -67,8 +67,8 @@ html {
     font-family: Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
     font-weight: 300;
     overflow: hidden;
-    transition: width .3s;
     line-height: 50px;
+    transition: all .3s;
 }
 
 .layui-layout-admin .layui-header .layui-logo img {
@@ -159,7 +159,7 @@ html {
 
 /** 底部样式结束 */
 
-/** 侧导航折叠样式 */
+/** 侧导航折叠样式PC */
 .layui-layout-admin.admin-nav-mini .layui-header .layui-logo {
     width: 60px;
 }
@@ -225,7 +225,6 @@ html {
     .layui-layout-admin .layui-side {
         position: fixed;
         left: -260px;
-        top: 0;
         z-index: 10000;
     }
 
@@ -238,14 +237,8 @@ html {
     }
 
     .layui-layout-admin .layui-header .layui-logo {
-        left: 70px;
-        text-align: left;
-        color: #333;
-        background-color: transparent;
-    }
-
-    .layui-layout-admin .layui-header .layui-logo img {
-        display: none;
+        position: fixed;
+        left: -260px;
     }
 
     .layui-layout-admin .layui-header .layui-layout-left {
@@ -259,6 +252,12 @@ html {
     /* 移动设备侧导航折叠样式 */
     .layui-layout-admin.admin-nav-mini .layui-header .layui-logo {
         width: 220px;
+        left: 0;
+        z-index: 10000;
+    }
+
+    .layui-layout-admin.admin-nav-mini .layui-header {
+        z-index: auto;
     }
 
     .layui-layout-admin.admin-nav-mini .layui-header .layui-logo cite {
@@ -306,6 +305,7 @@ html {
         left: 0;
     }
 
+    /** 移动设备遮罩层 */
     .layui-layout-admin.admin-nav-mini .site-mobile-shade {
         content: '';
         position: fixed;
@@ -313,7 +313,7 @@ html {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .2);
         z-index: 9999;
         cursor: pointer;
     }
