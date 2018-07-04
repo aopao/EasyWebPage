@@ -53,8 +53,9 @@ layui.define(['config', 'layer', 'element', 'form'], function (exports) {
                 title: false,
                 closeBtn: false,
                 offset: 'r',
-                shade: .1,
+                shade: .2,
                 shadeClose: true,
+                resize: false,
                 area: '336px',
                 skin: 'layui-layer-adminRight',
                 success: function () {
@@ -79,9 +80,10 @@ layui.define(['config', 'layer', 'element', 'form'], function (exports) {
                 type: 1,
                 id: 'adminPopupC',
                 title: param.title ? param.title : false,
-                shade: .1,
+                shade: .2,
                 area: '450px',
                 offset: '120px',
+                resize: false,
                 skin: 'layui-layer-adminCenter',
                 success: function () {
                     $('#adminPopupC').load(param.path, function () {

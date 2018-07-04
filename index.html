@@ -14,10 +14,10 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <!-- 头部 -->
-    <div class="layui-header" p-com="header.a"></div>
+    <div class="layui-header" p-com="header"></div>
 
     <!-- 侧边栏 -->
-    <div class="layui-side" p-com="side.a"></div>
+    <div class="layui-side" p-com="side"></div>
 
     <!-- 主体部分 -->
     <div class="layui-body"></div>
@@ -50,15 +50,6 @@
             location.replace('login.html');
             return;
         }
-
-        // Pandyle的组件默认是/components/目录下，因为前面带了一个“/”所以如果项目部署之后带项目名会存在路径问题，这里配置去电前面“/”
-        // 这个问题已经在联系作者修改了，现在要么项目部署别带项目名，要么只能像下面的写法了
-        Pandyle.config({
-            comPath: {
-                header: 'components/header.html',
-                side: 'components/side.html'
-            }
-        });
 
         // 获取当前用户信息
         index.getUser(function (user) {

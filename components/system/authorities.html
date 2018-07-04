@@ -9,8 +9,9 @@
     <div class="layui-card-body">
         <div class="layui-form toolbar">
             查看角色权限：
-            <select id="auth-slt-role" lay-filter="auth-slt-role" p-each="roles">
-                <option p-bind="value:{{roleId}}">{{roleName}}</option>
+            <select id="auth-slt-role" lay-filter="auth-slt-role">
+                <option value="">-请选择角色-</option>
+                <option p-for="roles" p-bind="value:{{roleId}}">{{roleName}}</option>
             </select>&emsp;
             <button id="auth-btn-sync" class="layui-btn icon-btn" lay-tips="自动扫描所有接口同步到数据库">
                 <i class="layui-icon">&#xe669;</i>同步
@@ -90,7 +91,6 @@
         admin.req('role_list.json', {}, function (data) {
             //admin.removeLoading('.toolbar');
             if (0 == data.code) {
-                data.data.unshift({roleId: '', roleName: '-请选择角色-'});
                 $('#auth-slt-role').vm({roles: data.data});
                 form.render('select');
             } else {

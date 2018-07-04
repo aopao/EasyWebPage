@@ -734,7 +734,7 @@ jquery打造的mvvm框架，还提供了类似vue组件的写法。
 &emsp;&emsp;EasyWeb里面的头部header、side等都是使用的它的组件的写法，还有一些下拉框select的渲染也是用的它提供的mvvm的写法，
 确实比layui的模板引擎要好用多了，模板引擎这几个字真是听的牛B哄哄，用起来很一般啊。
 
-&emsp;&emsp;我这里就不提供pandyle.js的用法了，以免造跟不上pandyle作者的更新脚步，
+&emsp;&emsp;我这里就不提供pandyle.js的用法了，以免跟不上pandyle作者的更新脚步，
 大家可以到这里[pandyle.js](https://gitee.com/pandarrr/pandyle)查看pandyle的开发文档。
 
 
@@ -765,10 +765,10 @@ jquery打造的mvvm框架，还提供了类似vue组件的写法。
 ---
 
 ## 6.联系方式
-### 6.1.欢迎加入“前后端分离技术交流群”：
+### 6.1.欢迎加入“前后端分离技术交流群”
 ![群二维码](https://ws1.sinaimg.cn/large/006a7GCKgy1fstbxycj1xj305k07m75h.jpg)
 
-### 6.2.我要打赏：
+### 6.2.我要打赏
 都是猿友，撸码不易，如果这个轮子对你有用，不妨打赏一下！
 
 ![赞赏码](https://ws1.sinaimg.cn/large/88052d6bgy1fsvn3kbkrjj20go06e40f.jpg)

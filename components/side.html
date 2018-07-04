@@ -1,13 +1,11 @@
 <div class="layui-side-scroll">
-    <ul class="layui-nav layui-nav-tree" p-each="menus" style="margin-top: 15px;">
-        <li class="layui-nav-item">
+    <ul class="layui-nav layui-nav-tree" style="margin-top: 15px;">
+        <li class="layui-nav-item" p-for="menus">
             <a href="javascript:;"><i p-bind="class:layui-icon {{icon}}"></i>&emsp;<cite>{{name}}</cite></a>
             <dl class="layui-nav-child" p-each="subMenus">
                 <dd><a p-bind="href:#!{{url}}">{{name}}</a></dd>
             </dl>
         </li>
-    </ul>
-    <ul class="layui-nav layui-nav-tree">
         <li class="layui-nav-item">
             <a href="javascript:;"><i class="layui-icon layui-icon-senior"></i>&emsp;<cite>系统监控</cite></a>
             <dl class="layui-nav-child">
