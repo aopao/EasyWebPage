@@ -152,7 +152,7 @@ mvvm框架 | [pandyle.js](https://gitee.com/pandarrr/pandyle) (专为jquery编�
     });
     ```
 
-&emsp;&emsp;如果你的模块没有文件夹直接在module里面就不需要写extend了，如果你的模块有独立的文件夹，向formSelects一样，
+&emsp;&emsp;如果你的模块没有文件夹直接在module里面就不需要写extend了，如果你的模块有独立的文件夹，像formSelects一样，
 就需要在extend里面明确指出模块的位置。
 
 ![添加模块示例](https://ws1.sinaimg.cn/large/006a7GCKgy1fswoa7omxej30bh0cgwes.jpg)
