@@ -1,6 +1,6 @@
 ![logo](./logo.png)
 
-# [EasyWeb 2.0](#)
+# [EasyWeb](/)
 
 > 基于jquery、layui的管理系统模板
 
