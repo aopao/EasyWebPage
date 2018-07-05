@@ -741,6 +741,13 @@ jquery打造的mvvm框架，还提供了类似vue组件的写法。
 大家可以到这里[pandyle.js](https://gitee.com/pandarrr/pandyle)查看pandyle的开发文档。
 
 
+### 3.9.主题功能
+&emsp;&emsp;EasyWeb包含前后台，所以开发时间比较紧张，暂时不提供自由切换主题的功能，但是提供了一个主题生成器，
+如果你想改变EasyWeb的默认主题，请使用主题生成器：[EasyWeb主题生成器](https://whvse.gitee.io/easywebpage/docs/generater_theme.html)
+
+
+
+
 ## 4.项目截图
 
 ![登录](https://ws1.sinaimg.cn/large/006a7GCKgy1fswqs955sdj316v0qmdj1.jpg) 
