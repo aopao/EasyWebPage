@@ -50,6 +50,10 @@ html {
     color: #333;
 }
 
+.layui-layout-admin .layui-header .layui-nav-child a {
+    color: #333 !important;
+}
+
 .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
     border-color: #666 transparent transparent;
 }
@@ -113,7 +117,7 @@ html {
 
 .layui-layout-admin .layui-side .layui-nav {
     width: 220px;
-    background-color: #001529;
+    background-color: transparent;
 }
 
 .layui-layout-admin .layui-side .layui-nav .layui-nav-item > a:hover {
@@ -122,7 +126,7 @@ html {
 
 .layui-layout-admin .layui-side .layui-nav .layui-nav-item > .layui-nav-child {
     padding: 5px 0;
-    background-color: rgba(0, 0, 0, .5) !important;
+    background-color: rgba(0, 0, 0, .3) !important;
 }
 
 .layui-layout-admin .layui-side .layui-nav .layui-nav-more {
@@ -423,14 +427,6 @@ html {
 /** 表格上方工具栏样式 */
 .layui-form.toolbar {
     color: #333;
-}
-
-.layui-form.toolbar > * {
-    margin-bottom: 10px;
-}
-
-.layui-card-body .layui-table {
-    margin: 0;
 }
 
 .layui-form.toolbar .layui-form-select input {
