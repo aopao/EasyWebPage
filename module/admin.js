@@ -81,8 +81,8 @@ layui.define(['config', 'layer', 'element', 'form'], function (exports) {
                 id: 'adminPopupC',
                 title: param.title ? param.title : false,
                 shade: .2,
-                area: '450px',
                 offset: '120px',
+                area: param.area ? param.area : '450px',
                 resize: false,
                 skin: 'layui-layer-adminCenter',
                 success: function () {

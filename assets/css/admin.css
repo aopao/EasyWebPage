@@ -62,6 +62,7 @@ html {
 .layui-layout-admin .layui-header .layui-logo {
     width: 220px;
     background-color: #002140;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
     color: #eee;
     font-size: 16px;
     font-family: Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
@@ -105,14 +106,14 @@ html {
 .layui-layout-admin .layui-side {
     top: 50px;
     width: 220px;
-    background: #001529;
+    background-color: #001529;
     transition: all .3s;
     -webkit-transition: all .3s;
 }
 
 .layui-layout-admin .layui-side .layui-nav {
     width: 220px;
-    background: #001529;
+    background-color: #001529;
 }
 
 .layui-layout-admin .layui-side .layui-nav .layui-nav-item > a:hover {
@@ -237,7 +238,6 @@ html {
     }
 
     .layui-layout-admin .layui-header .layui-logo {
-        position: fixed;
         left: -260px;
     }
 
@@ -253,7 +253,8 @@ html {
     .layui-layout-admin.admin-nav-mini .layui-header .layui-logo {
         width: 220px;
         left: 0;
-        z-index: 10000;
+        z-index: 10001;
+        background-color: #001529;
     }
 
     .layui-layout-admin.admin-nav-mini .layui-header {
@@ -422,6 +423,14 @@ html {
 /** 表格上方工具栏样式 */
 .layui-form.toolbar {
     color: #333;
+}
+
+.layui-form.toolbar > * {
+    margin-bottom: 10px;
+}
+
+.layui-card-body .layui-table {
+    margin: 0;
 }
 
 .layui-form.toolbar .layui-form-select input {
