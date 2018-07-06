@@ -1,11 +1,33 @@
 <div class="layui-side-scroll">
     <ul class="layui-nav layui-nav-tree" style="margin-top: 15px;">
-        <li class="layui-nav-item" p-for="menus">
-            <a href="javascript:;"><i p-bind="class:layui-icon {{icon}}"></i>&emsp;<cite>{{name}}</cite></a>
-            <dl class="layui-nav-child" p-each="subMenus">
-                <dd><a p-bind="href:#!{{url}}">{{name}}</a></dd>
-            </dl>
-        </li>
+
+        <script id="sideNav" type="text/html">
+            {{#  layui.each(d, function(index, item){ }}
+            <li class="layui-nav-item">
+                <a href="{{item.url}}"><i class="layui-icon {{item.icon}}"></i>&emsp;<cite>{{ item.name }}</cite></a>
+                {{# if(item.subMenus&&item.subMenus.length>0){ }}
+                <dl class="layui-nav-child">
+                    {{# layui.each(item.subMenus, function(index, subItem){ }}
+                    <dd>
+                        <a href="{{ subItem.url }}">{{ subItem.name }}</a>
+
+                        {{# if(subItem.subMenus&&subItem.subMenus.length>0){ }}
+                        <dl class="layui-nav-child">
+                            {{# layui.each(subItem.subMenus, function(index, thrItem){ }}
+                            <dd>
+                                <a href="{{ thrItem.url }}">{{ thrItem.name }}</a>
+                            </dd>
+                            {{# }); }}
+                        </dl>
+                        {{# } }}
+                    </dd>
+                    {{# }); }}
+                </dl>
+                {{# } }}
+            </li>
+            {{#  }); }}
+        </script>
+
         <li class="layui-nav-item">
             <a href="javascript:;"><i class="layui-icon layui-icon-senior"></i>&emsp;<cite>系统监控</cite></a>
             <dl class="layui-nav-child">

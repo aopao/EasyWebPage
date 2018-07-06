@@ -1,31 +1,67 @@
-layui.define(['config', 'admin', 'layer'], function (exports) {
+layui.define(['config', 'admin', 'layer', 'laytpl', 'element'], function (exports) {
     var $ = layui.$;
     var config = layui.config;
     var admin = layui.admin;
     var layer = layui.layer;
+    var laytpl = layui.laytpl;
+    var element = layui.element;
 
     var index = {
         // 渲染左侧导航栏
         initLeftNav: function () {
-            var authMenus = new Array();
-            for (var i = 0; i < config.menus.length; i++) {
+            // 判断权限
+            for (var i = config.menus.length - 1; i >= 0; i--) {
                 var tempMenu = config.menus[i];
-                var tempSubMenus = new Array();
-                for (var j = 0; j < tempMenu.subMenus.length; j++) {
-                    var tempSubMenu = tempMenu.subMenus[j];
-                    if (!tempSubMenu.auth) {
-                        tempSubMenus.push(tempSubMenu);
-                    } else if (admin.hasPerm(tempSubMenu.auth)) {
-                        tempSubMenus.push(tempSubMenu);
+                if (tempMenu.auth && !admin.hasPerm(tempMenu.auth)) {
+                    config.menus.splice(i, 1);
+                    continue;
+                }
+                if (!tempMenu.subMenus) {
+                    continue;
+                }
+                for (var j = tempMenu.subMenus.length - 1; j >= 0; j--) {
+                    var jMenus = tempMenu.subMenus[j];
+                    if (jMenus.auth && !admin.hasPerm(jMenus.auth)) {
+                        tempMenu.subMenus.splice(j, 1);
+                        continue;
+                    }
+                    if (!jMenus.subMenus) {
+                        continue;
+                    }
+                    for (var k = jMenus.subMenus.length - 1; k >= 0; k--) {
+                        if (jMenus.subMenus[k].auth && !admin.hasPerm(jMenus.subMenus[k].auth)) {
+                            jMenus.subMenus.splice(k, 1);
+                            continue;
+                        }
                     }
                 }
-                if (tempSubMenus.length > 0) {
-                    tempMenu.subMenus = tempSubMenus;
-                    authMenus.push(tempMenu);
+            }
+            // 去除空的目录
+            for (var i = config.menus.length - 1; i >= 0; i--) {
+                var tempMenu = config.menus[i];
+                if (tempMenu.subMenus && tempMenu.subMenus.length <= 0) {
+                    config.menus.splice(i, 1);
+                    continue;
+                }
+                if (!tempMenu.subMenus) {
+                    continue;
+                }
+                for (var j = tempMenu.subMenus.length - 1; j >= 0; j--) {
+                    var jMenus = tempMenu.subMenus[j];
+                    if (jMenus.subMenus && jMenus.subMenus.length <= 0) {
+                        tempMenu.splice(j, 1);
+                        continue;
+                    }
                 }
             }
-            $('.layui-layout-admin .layui-side').vm({menus: authMenus});
-            admin.activeNav(Q.lash);
+            // 渲染
+            $('.layui-layout-admin .layui-side').load('components/side.html', function () {
+                laytpl(sideNav.innerHTML).render(config.menus, function (html) {
+                    $('#sideNav').after(html);
+                });
+                element.render('nav');
+                admin.activeNav(Q.lash);
+            });
         },
         // 路由注册
         initRouter: function () {
@@ -37,8 +73,8 @@ layui.define(['config', 'admin', 'layer'], function (exports) {
         // 使用递归循环注册
         regRouter: function (menus) {
             $.each(menus, function (i, data) {
-                if (data.url) {
-                    Q.reg(data.url, function () {
+                if (data.url && data.url.indexOf('#!') == 0) {
+                    Q.reg(data.url.substring(2), function () {
                         admin.loadView('components/' + data.path);
                     });
                 }

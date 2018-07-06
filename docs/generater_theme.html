@@ -25,6 +25,25 @@
             margin-right: 6px;
             background-color: #FBFBFB;
         }
+
+        .login-footer {
+            text-align: center;
+            line-height: 30px;
+            padding-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .login-footer span {
+            padding: 0 5px
+        }
+
+        .login-footer a {
+            padding: 0 5px;
+        }
+
+        .login-footer a:hover {
+            color: #000 !important;
+        }
     </style>
 </head>
 
@@ -68,7 +87,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">主题颜色(按钮等)</label>
+            <label class="layui-form-label">全局主题颜色(按钮等)</label>
             <div class="layui-input-block">
                 <input name="primary" class="layui-input" type="text" value="#009688" lay-verify="required">
                 <div class="color-demo"></div>
@@ -85,7 +104,26 @@
             </button>
         </div>
     </div>
-    <pre class="layui-code" id="tv-rs"></pre>
+    <pre class="layui-code" id="tv-rs" lay-title="theme.css"></pre>
+
+    <hr>
+
+    <h2 style="margin-top: 20px;margin-bottom: 15px;">使用方法</h2>
+    <p>将下载好的css放在项目里面，然后打开index.html，引入下载的css即可生效，如果样式有生成的不全的，请联系作者增加：</p>
+    <pre class="layui-code" lay-title="index.html" lay-encode="true">
+<link rel="stylesheet" href="assets/css/admin.css"/>
+        <!-- 引入下载的css，放在admin.css之后，建议放在所有css之后 -->
+<link rel="stylesheet" href="assets/css/theme.css"/>
+    </pre>
+
+    <div class="login-footer">
+        <p>© 2018 <a href="javascript:;" target="_blank">EasyWeb版权所有</a></p>
+        <p>
+            <span><a href="https://github.com/whvcse/EasyWebPage" target="_blank">前往github</a></span>
+            <span><a href="https://gitee.com/whvse/EasyWebPage" target="_blank">前往gitee</a></span>
+            <span><a href="https://whvse.gitee.io/easywebpage/docs/" target="_blank">开发文档</a></span>
+        </p>
+    </div>
 </div>
 
 <script type="text/javascript" src="../assets/libs/jquery-3.2.1.min.js"></script>
@@ -96,7 +134,7 @@
     layui.use(['element', 'form', 'code'], function () {
         var element = layui.element;
         var form = layui.form;
-        layui.code({title: 'css', about: false});
+        layui.code({about: false});
         $('#btn-down').hide();
 
         var tpl;
@@ -114,7 +152,7 @@
                 }
             }
             $('#tv-rs').text(tpl);
-            layui.code({title: 'css', about: false});
+            layui.code({elem: '#tv-rs', about: false});
         });
 
         layer.load(2);

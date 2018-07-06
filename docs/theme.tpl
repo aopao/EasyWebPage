@@ -4,6 +4,13 @@
     color: {{logo_font}};
 }
 
+/** 移动设备样式 */
+@media screen and (max-width: 750px) {
+    .layui-layout-admin.admin-nav-mini .layui-header .layui-logo {
+        background-color: {{side}};
+    }
+}
+
 /** header样式 */
 .layui-layout-admin .layui-header {
     background-color: {{header}};
